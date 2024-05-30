@@ -1,0 +1,29 @@
+.search {
+    width: 100%;
+    margin: 10px auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* @media (min-width: 576px) {
+    .search {
+        max-width: 300px;
+    }
+} */
+@media (min-width: 768px) {
+    .search {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 992px) {
+    .search {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .search {
+        max-width: 600px;
+    }
+}

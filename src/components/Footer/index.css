@@ -1,0 +1,8 @@
+.footer-container {
+    display: flex;
+    width: 100%;
+}
+
+.footer-container .footer-component {
+    flex: 1;
+}

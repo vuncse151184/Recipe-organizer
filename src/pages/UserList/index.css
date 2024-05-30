@@ -1,0 +1,16 @@
+.user-list {
+    margin: 2rem 0 2rem 0;
+}
+
+.user-list .moreOption {
+    /* color: #285d9a; */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.user-list p {
+    margin: 0;
+}

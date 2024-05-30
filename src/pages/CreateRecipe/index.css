@@ -1,0 +1,29 @@
+.btn-delete-recipe {
+    outline: 'none';
+    margin-left: '10px';
+
+}
+
+.container-nutritions {
+    display: "flex";
+    align-Items: "center"
+}
+
+.container-nutritions .typo-nutritions {
+    line-Height: '0.8';
+    font-Size: "25px";
+    font-Weight: "bold"
+}
+
+.btn-upload-img {
+    background-Size: "cover";
+    background-Position: "center";
+    width: "160px";
+    height: "160px";
+    border-Radius: "50%";
+    display: "flex";
+    align-Items: "center";
+    justify-Content: "center";
+    cursor: "pointer";
+    border: "2px dashed rgb(243, 156, 18)"
+}

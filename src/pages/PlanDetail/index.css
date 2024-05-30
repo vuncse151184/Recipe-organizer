@@ -1,0 +1,56 @@
+.meal-detail {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.meal-detail .meal {
+    flex: 2;
+    padding: 20px 100px;
+}
+
+.meal-detail button {
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: #fff;
+    border: 1px solid #f39c12;
+    color: #f39c12;
+    margin-right: 10px;
+}
+
+.meal-detail button:hover {
+    background-color: #f39c12;
+    color: #fff;
+    cursor: pointer;
+}
+
+.meal-detail button:focus {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.meal-detail .title {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.meal-detail .title .nutrition {
+    display: flex;
+}
+
+.meal-detail .title .nutrition .nutrition-component {
+    flex: 1;
+}
+
+.meal-detail .ingredient {
+    flex: 1;
+    padding: 20px;
+    height: fit-content;
+    border: 1px solid #e6e6e6;
+}
+
+.meal-detail .ingredient .ingredients {
+    margin-bottom: 10px;
+}

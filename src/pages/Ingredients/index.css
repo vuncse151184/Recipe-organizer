@@ -1,0 +1,25 @@
+.ingredient-list {
+    margin: 2rem 0 2rem 0;
+}
+
+.ingredient-list .moreOption {
+    /* color: #285d9a; */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.ingredient-list p {
+    margin: 0;
+}
+
+.ingredient-list .button-create {
+    margin: 0 15px;
+}
+
+.form-create {
+    display: block !important;
+    padding: 0 !important;
+}

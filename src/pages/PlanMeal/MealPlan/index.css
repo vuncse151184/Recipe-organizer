@@ -1,0 +1,99 @@
+.plan-meal {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.plan-meal .date-info {
+    display: flex;
+    position: relative;
+    padding: 20px;
+    align-items: center;
+}
+
+.plan-meal .date-info .modal {
+    background-color: '#fff' !important;
+}
+
+.plan-meal .date-info .date {
+    position: absolute;
+    left: 0;
+}
+
+.plan-meal .date-info .button {
+    position: absolute;
+    right: 0;
+}
+
+.plan-meal .date-info .button button {
+    border: none;
+    background-color: #fff;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.plan-meal .date-info .date button {
+    border: 1px #f39c12 solid;
+    background-color: #fff;
+    color: #f39c12;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.plan-meal .date-info .date button:hover {
+    background-color: #f39c12 !important;
+    color: #fff;
+}
+
+.plan-meal .table-header {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-height: 20px;
+    margin-top: 10px;
+}
+
+.plan-meal .table-header .table-header-component {
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.plan-meal .table-header > div {
+    flex: 1;
+    padding: 10px;
+    border-top: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.plan-meal .table-header > div:last-child {
+    flex: 1;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+}
+
+.plan-meal .table-body {
+    width: 100%;
+    flex-wrap: nowrap;
+    min-height: 20px;
+}
+
+.plan-meal .table-body .table-body-content {
+    display: flex;
+}
+
+.plan-meal .table-body .table-body-content > div {
+    flex: 1;
+    padding: 10px;
+    min-height: 123px;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.plan-meal .table-body .table-body-content > div:last-child {
+    flex: 1;
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
