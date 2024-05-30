@@ -11,8 +11,9 @@ import { getAnalytics } from 'firebase/analytics'
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 import { Provider } from 'react-redux'
-import {getStorage} from 'firebase/storage'
+import { getStorage } from 'firebase/storage'
 import store from './redux/store'
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyBP7wwbFT9wxZbr-JmKi3xhXbheyenmEGo',
@@ -30,9 +31,11 @@ const analytics = getAnalytics(app)
 export const storage = getStorage(app)
 function App() {
     return (
-        <Provider store={store}>
-            <RouterComponents />
-        </Provider>
+        <GoogleOAuthProvider clientId="299260202858-s0i6pho8rn8cikahgp5vpc5gp7kb9ma7.apps.googleusercontent.com">
+            <Provider store={store}>
+                <RouterComponents />
+            </Provider>
+        </GoogleOAuthProvider>
     )
 }
 

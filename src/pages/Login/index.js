@@ -15,6 +15,8 @@ import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 // import { useCookies } from 'react-cookie'
 import Swal from 'sweetalert2'
+import { GoogleLogin } from '@react-oauth/google';
+
 const defaultTheme = createTheme()
 
 const Login = () => {
@@ -23,12 +25,12 @@ const Login = () => {
     const baseUrl = `https://recipe-organizer-api.azurewebsites.net/api/UserAccounts/CheckLoginEmail`
 
     const handleCredentialResponse = async (response) => {
+        console.log("response", response)
         var decoded = jwt_decode(response.credential)
         var email = decoded.email
         var ggToken = decoded.sub
         var image = decoded.picture
         var fullname = decoded.name
-        document.getElementById('buttonDiv').hidden = true
 
         try {
             const response = await fetch(baseUrl, {
@@ -63,21 +65,21 @@ const Login = () => {
             console.error('Error calling API:', error)
         }
     }
-    useEffect(() => {
-        /* global google*/
-        window.onload = function () {
-            google.accounts.id.initialize({
-                client_id:
-                    '299260202858-s0i6pho8rn8cikahgp5vpc5gp7kb9ma7.apps.googleusercontent.com',
-                callback: handleCredentialResponse,
-            })
-            google.accounts.id.renderButton(
-                document.getElementById('buttonDiv'),
-                { theme: 'outline', size: 'large' } // customization attributes
-            )
-            google.accounts.id.prompt() // also display the One Tap dialog
-        }
-    })
+    // useEffect(() => {
+    //     /* global google*/
+    //     window.onload = function () {
+    //         google.accounts.id.initialize({
+    //             client_id:
+    //                 '299260202858-s0i6pho8rn8cikahgp5vpc5gp7kb9ma7.apps.googleusercontent.com',
+    //             callback: handleCredentialResponse,
+    //         })
+    //         google.accounts.id.renderButton(
+    //             document.getElementById('buttonDiv'),
+    //             { theme: 'outline', size: 'large' } // customization attributes
+    //         )
+    //         google.accounts.id.prompt() // also display the One Tap dialog
+    //     }
+    // })
 
     return (
 
@@ -109,45 +111,7 @@ const Login = () => {
                             alignItems: 'center',
                         }}
                     >
-                        {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                            <LockOutlinedIcon />
-                        </Avatar>
-                        <Typography component="h1" variant="h5">
-                            Sign in
-                        </Typography>
-                        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                            <TextField
-                                margin="normal"
-                                required
-                                fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                                autoComplete="email"
-                                autoFocus
-                            />
-                            <TextField
-                                margin="normal"
-                                required
-                                fullWidth
-                                name="password"
-                                label="Password"
-                                type="password"
-                                id="password"
-                                autoComplete="current-password"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox value="remember" color="primary" />}
-                                label="Remember me"
-                            />
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                sx={{ mt: 3, mb: 2 }}
-                            >
-                                Sign In
-                            </Button> */}
+
                         <Box sx={{ paddingTop: '30px', textAlign: 'center' }}>
                             <Box sx={{}}>
                                 <Link to="/" sx={{ textAlign: 'center' }}>
@@ -198,8 +162,13 @@ const Login = () => {
                                 Delicious{' '}
                             </Typography>
                         </Box>
+                        <GoogleLogin
+                            onSuccess={(credentialResponse) => handleCredentialResponse(credentialResponse)}
+                            onError={() => {
+                                console.log('Login Failed');
+                            }}
+                        />
 
-                        <div id="buttonDiv" style={{ paddingTop: '50px' }}></div>
 
                         {/* <Button
                                 id="googleSignInButton"  // This ID is used to target the button
